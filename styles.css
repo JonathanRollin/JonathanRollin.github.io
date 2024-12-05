@@ -1,0 +1,142 @@
+/* Basic resets */
+body,
+h1,
+h2,
+p {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Verdana, sans-serif;
+	line-height: 1.6;
+	background-color: #f4f4f4;
+	/* Background color - might change */
+}
+
+header {
+	color: #fff;
+	/* Text color */
+	padding: 10px;
+	/* Padding around header for asthetic spacing */
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #fff;
+	/* Change link color otherwise this remains blue */
+}
+
+nav ul li a:hover {
+	color: #776B5D;
+	/* Change color on hover to match chosen style guide */
+}
+
+.main-dishes-link {
+	color: inherit;
+	/* Parent text color */
+	display: block;
+	/* Makes entire section clickable */
+}
+
+.main-dishes-link:hover {
+	transition: background-color 0.3s;
+	/* Smooth transition */
+}
+
+.sides-link {
+	color: inherit;
+	/* Parent text color */
+	display: block;
+	/* Entire section clickable */
+}
+
+.sides-link:hover {
+	transition: background-color 0.3s;
+}
+
+.desserts-link {
+	color: inherit;
+	/* Parent text color */
+	display: block;
+	/* Entire section clickable */
+}
+
+.desserts-link:hover {
+	transition: background-color 0.3s;
+}
+
+section {
+	margin: 20px;
+	padding: 20px;
+	background: #EBE3D5;
+	border-radius: 5px;
+}
+
+.image-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	/* Space images evenly */
+	margin-top: 20px;
+	max-width: 800px;
+	/* Fixes the issue of images spreading too far apart */
+	gap: 10px;
+	/* Space between images */
+}
+
+.dish-image {
+	width: 30%;
+	/* Adjust width */
+	max-width: 250px;
+	height: auto;
+	/* Maintain aspect ratio */
+	border-radius: 5px;
+	/* Add rounded corners */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	/* Adds a shadow */
+	transition: transform 0.2s;
+	/* Add transition for hover effect */
+	object-fit: cover;
+	/* Ensure the image covers the area without distortion */
+}
+
+.dish-image:hover {
+	transform: scale(1.05);
+	/* Scale image on hover */
+}
+
+@media (max-width: 800px) {
+	.image-gallery {
+		justify-content: center; /* Center align images on smaller screens */
+	}
+
+	.dish-image {
+		width: 45%; /* Adjust image width on smaller screens */
+	}
+}
+
+/* Media makes the site responsive to screen size. Added multiples based on directive from a couple places */
+@media (max-width: 480px) {
+	header h1 {
+		font-size: 24px; /* Smaller font size for the header */
+	}
+
+	nav ul {
+		flex-direction: column; /* Stack navigation items vertically */
+	}
+
+	nav ul li {
+		margin: 5px 0; /* Space out navigation items */
+	}
+
+	.image-gallery {
+		flex-direction: column; /* Vertical image stack on small screens */
+		align-items: center; /* Center aligns images */
+	}
+
+	.dish-image {
+		width: 90%; /* Make images wider on smaller screens */
+		max-width: none; /* Removes max-width to allow flexibility */
+	}
+}

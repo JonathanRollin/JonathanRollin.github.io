@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Calculate serving sizes on Cooking with Jonathan. Perfect for adjusting recipes to your needs!">
+      <meta name="keywords" content="cooking, recipes, serving size, calculator">
+      <meta name="author" content="Jonathan Rollin">
+      <title>Serving Size - Cooking with Jonathan</title>
+      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="layout.css">
+   </head>
+   <body>
+      <header>
+         <h1>Cooking with Jonathan</h1>
+         <nav>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="main-dishes.html">Main Dishes</a></li>
+               <li><a href="sides.html">Sides</a></li>
+               <li><a href="desserts.html">Desserts</a></li>
+               <li><a href="serving-size.html" class="active">Serving Size Calculator</a></li>
+            </ul>
+         </nav>
+      </header>
+      <main>
+         <h2>Serving Size Calculator</h2>
+         <form>
+            <!-- Fieldset for Personal Details -->
+            <fieldset>
+               <legend>Personal Details</legend>
+               <label for="name">Name:</label>
+               <input type="text" id="name" name="name" placeholder="Enter your name" required pattern="[A-Za-z\s]+" maxlength="50">
+               <label for="email">Email:</label>
+               <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                           <label for="date">Date:</label>
+               <input type="date" id="date" name="date" required>
+            </fieldset>
+
+            <!-- Fieldset for Recipe Details -->
+<fieldset>
+   <legend>Recipe Details</legend>
+   <label for="recipe-name">Recipe Name:</label>
+   <input type="text" id="recipe-name" name="recipe-name" placeholder="Enter the recipe name" required maxlength="100">
+   <label for="date">Date:</label>
+   <input type="date" id="date" name="date" required>
+   <label>Choose Meal Type:</label>
+   <div class="radio-group">
+      <div>
+         <input type="radio" id="main-dish" name="meal-type" value="Main Dish" required>
+         <label for="main-dish">Main Dish</label>
+      </div>
+      <div>
+         <input type="radio" id="side" name="meal-type" value="Side">
+         <label for="side">Side</label>
+      </div>
+      <div>
+         <input type="radio" id="dessert" name="meal-type" value="Dessert">
+         <label for="dessert">Dessert</label>
+      </div>
+   </div>
+</fieldset>
+
+            <!-- Fieldset for Serving Adjustment -->
+            <fieldset>
+               <legend>Serving Adjustment</legend>
+               <label for="current-servings">Current Servings:</label>
+               <input type="number" id="current-servings" name="current-servings" min="1" max="50" step="1" required>
+               <label for="desired-servings">Desired Servings:</label>
+               <input type="range" id="desired-servings" name="desired-servings" min="1" max="50" value="4" oninput="this.nextElementSibling.value = this.value">
+               <output>4</output>
+               <label for="units">Choose Units:</label>
+               <select id="units" name="units" required>
+                  <option value="cups">Cups</option>
+                  <option value="grams">Grams</option>
+                  <option value="liters">Liters</option>
+               </select>
+               <label for="special-requests">Special Requests:</label>
+               <textarea id="special-requests" name="special-requests" rows="4" placeholder="Enter any special requests here..."></textarea>
+            </fieldset>
+
+            <!-- Datalist -->
+            <fieldset>
+               <legend>Choose an Ingredient</legend>
+               <label for="ingredient">Ingredient:</label>
+               <input type="text" id="ingredient" name="ingredient" list="ingredient-list" placeholder="Start typing...">
+               <datalist id="ingredient-list">
+                  <option value="Flour">
+                  <option value="Sugar">
+                  <option value="Butter">
+                  <option value="Eggs">
+                  <option value="Milk">
+               </datalist>
+            </fieldset>
+
+            <!-- Buttons -->
+            <div class="form-buttons">
+               <button type="submit">Calculate</button>
+               <button type="reset">Reset</button>
+            </div>
+         </form>
+      </main>
+      <footer>
+         <p>&copy; Created by Jonathan Rollin for WEB-110. All rights reserved.</p>
+      </footer>
+   </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Indulge in delightful desserts on Cooking with Jonathan. Perfect for satisfying your sweet tooth!">
+      <meta name="keywords" content="cooking, recipes, desserts">
+      <meta name="author" content="Jonathan Rollin">
+      <title>Desserts - Cooking with Jonathan</title>
+      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="layout.css">
+   </head>
+   <body>
+      <header>
+         <h1>Cooking with Jonathan</h1>
+<nav>
+   <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="main-dishes.html">Main Dishes</a></li>
+      <li><a href="sides.html">Sides</a></li>
+      <li><a href="desserts.html" class="active">Desserts</a></li> <!-- Active class only for desserts.html -->
+            <li><a href="serving-size.html">Serving Size Calculator</a></li>
+   </ul>
+</nav>
+      </header>
+      <main>
+         <!-- Image Gallery for Desserts -->
+         <section id="desserts">
+            <h2>Desserts</h2>
+            <p>Indulge in a variety of delightful desserts to satisfy your sweet tooth.</p>
+               <p id="rotating-message"></p>
+            <div class="image-gallery">
+               <a href="#">
+                  <img src="https://www.budgetbytes.com/wp-content/uploads/2024/08/Smores-Dip-V1-768x1024.jpeg" alt="S'mores Dip" class="dish-image">
+               </a>
+               <a href="#">
+                  <img src="https://www.budgetbytes.com/wp-content/uploads/2024/10/Pumpkin-Brownies-V3-768x1024.jpg" alt="Pumpkin Brownies" class="dish-image">
+               </a>
+               <a href="#">
+                  <img src="https://www.budgetbytes.com/wp-content/uploads/2024/10/Peanut-Butter-Pie-V1-768x1024.jpg" alt="Peanut Butter Pie" class="dish-image">
+               </a>
+            </div>
+         </section>
+         <!-- Contact Section -->
+         <section id="contact">
+            <h2>Have Questions?</h2>
+            <p>Email me at: <a href="mailto:jrolli21@email.cpcc.edu">jrolli21@email.cpcc.edu</a></p>
+         </section>
+      </main>
+      <footer>
+         <p>&copy; Created by Jonathan Rollin for WEB-110. All rights reserved. Current Time: <span id="footer-time"></span></p> <!-- Time display in footer -->
+      </footer>
+<script>
+   // Function to update the time in the footer
+   function updateFooterTime() {
+      const now = new Date();
+      const options = { weekday: 'long', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      document.getElementById("footer-time").textContent = now.toLocaleString('en-US', options);
+   }
+
+   // Update the time immediately and set it to refresh every second
+   setInterval(updateFooterTime, 1000);
+   updateFooterTime();
+</script>
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+      const messages = [
+         "Try our S'mores Dip for a quick and fun dessert!",
+         "Pumpkin Brownies are perfect for the fall season!",
+         "Peanut Butter Pie is a creamy, no-bake favorite.",
+         "Don't forget to pair your desserts with coffee or tea!"
+      ];
+      
+      let currentMessageIndex = 0;
+
+      // Function to update the message
+      function updateMessage() {
+         const messageElement = document.getElementById("rotating-message");
+         if (messageElement) {
+            messageElement.textContent = messages[currentMessageIndex];
+            currentMessageIndex = (currentMessageIndex + 1) % messages.length; // Loop back to the first message
+         }
+      }
+
+      // Update the message immediately and every 5 seconds
+      setInterval(updateMessage, 5000);
+      updateMessage(); // Call immediately to set the first message
+   });
+
+   // Function to update the time in the footer
+   function updateFooterTime() {
+      const now = new Date();
+      const options = { weekday: 'long', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      document.getElementById("footer-time").textContent = now.toLocaleString('en-US', options);
+   }
+
+   // Update the time immediately and set it to refresh every second
+   setInterval(updateFooterTime, 1000);
+   updateFooterTime();
+</script>
+
+   </body>
+</html>

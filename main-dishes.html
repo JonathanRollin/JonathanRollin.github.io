@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Explore delicious main dishes on Cooking with Jonathan. Perfect for dinner parties, family meals, and more!">
+      <meta name="keywords" content="cooking, recipes, main dishes">
+      <meta name="author" content="Jonathan Rollin">
+      <title>Main Dishes - Cooking with Jonathan</title>
+      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="layout.css">
+   </head>
+   <body>
+      <header>
+         <h1>Cooking with Jonathan</h1>
+         <nav>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="main-dishes.html" class="active">Main Dishes</a></li>
+               <li><a href="sides.html">Sides</a></li>
+               <li><a href="desserts.html">Desserts</a></li>
+                           <li><a href="serving-size.html">Serving Size Calculator</a></li>
+            </ul>
+         </nav>
+      </header>
+      <main>
+         <!-- Image Gallery for Main Dishes -->
+         <section id="maindishes">
+            <h2>Main Dishes</h2>
+            <p>Discover a selection of hearty and flavorful main dishes that are perfect for any occasion.</p>
+               <!-- Placeholder for rotating messages -->
+   <p id="rotating-message"></p>
+            <div class="image-gallery">
+               <a href="#">
+                  <img src="https://www.budgetbytes.com/wp-content/uploads/2018/09/Basic-Chili-in-Bowl-V2-1200-768x1024.jpg" alt="Classic Beef Chili" class="dish-image">
+               </a>
+               <a href="#">
+                  <img src="https://www.budgetbytes.com/wp-content/uploads/2021/10/Chicken-Stew-V2-768x1024.jpg" alt="Chicken Stew" class="dish-image">
+               </a>
+               <a href="#">
+                  <img src="https://www.budgetbytes.com/wp-content/uploads/2021/10/Pumpkin-Chili-V2-768x1024.jpg" alt="Pumpkin Chili" class="dish-image">
+               </a>
+            </div>
+         </section>
+         <!-- Contact Section -->
+         <section id="contact">
+            <h2>Have Questions?</h2>
+            <p>Email me at: <a href="mailto:jrolli21@email.cpcc.edu">jrolli21@email.cpcc.edu</a></p>
+         </section>
+      </main>
+      <footer>
+         <p>&copy; Created by Jonathan Rollin for WEB-110. All rights reserved. Current Time: <span id="footer-time"></span></p> <!-- Time display in footer -->
+      </footer>
+<script>
+   // Function to update the time in the footer
+   function updateFooterTime() {
+      const now = new Date();
+      const options = { weekday: 'long', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      document.getElementById("footer-time").textContent = now.toLocaleString('en-US', options);
+   }
+
+   // Update the time immediately and set it to refresh every second
+   setInterval(updateFooterTime, 1000);
+   updateFooterTime();
+</script>
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+      const messages = [
+         "Try pairing our main dishes with a delicious side!",
+         "Hearty Chicken Stew is a crowd favorite for family dinners!",
+         "Pumpkin Chili is perfect for a cozy fall evening.",
+         "Classic Beef Chili is a quick and comforting meal!"
+      ];
+      
+      let currentMessageIndex = 0;
+
+      // Function to update the message
+      function updateMessage() {
+         const messageElement = document.getElementById("rotating-message");
+         if (messageElement) {
+            messageElement.textContent = messages[currentMessageIndex];
+            currentMessageIndex = (currentMessageIndex + 1) % messages.length; // Loop back to the first message
+         }
+      }
+
+      // Update the message immediately and every 5 seconds
+      setInterval(updateMessage, 5000);
+      updateMessage(); // Call immediately to set the first message
+   });
+
+   // Function to update the time in the footer
+   function updateFooterTime() {
+      const now = new Date();
+      const options = { weekday: 'long', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      document.getElementById("footer-time").textContent = now.toLocaleString('en-US', options);
+   }
+
+   // Update the time immediately and set it to refresh every second
+   setInterval(updateFooterTime, 1000);
+   updateFooterTime();
+</script>
+   </body>
+</html>
